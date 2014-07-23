@@ -24,11 +24,7 @@ object Query {
   }
 
   case class DescendingSortedCombination(target: Combination, name: String) extends Expression {
-<<<<<<< HEAD
-    override def toString = target + " sort "+quoteValue(name) + " desc"
-=======
-      override def toString = target + " order by " + quoteName(name) + " desc"
->>>>>>> ogrodnek-master
+    override def toString = target + " order by " + quoteName(name) + " desc"
   }
 
   trait Negatable extends Expression
