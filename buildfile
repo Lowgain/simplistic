@@ -1,6 +1,6 @@
 require 'buildr/scala'
 
-VERSION_NUMBER = "1.0.21-SNAPSHOT"
+VERSION_NUMBER = "1.0.22-SNAPSHOT"
 
 repositories.remote << "http://www.ibiblio.org/maven2/"
 repositories.remote << "http://repo1.maven.org/maven2/"
@@ -19,12 +19,12 @@ SLF4J = [
 ]
 LOG4J = "log4j:log4j:jar:1.2.15"
 
-FAKESDB = "com.bizo:fakesdb-testing_2.10.0:jar:2.6.2"
+FAKESDB = "fakesdb:fakesdb-testing_2.10:jar:2.7.1"
 
-#download(artifact(FAKESDB) => 'https://github.com/downloads/stephenh/fakesdb/fakesdb-testing_2.9.1-2.6.1.jar')
+download(artifact(FAKESDB) => 'http://repo.joist.ws/com/bizo/fakesdb-testing_2.10/2.7.1/fakesdb-testing_2.10-2.7.1.jar')
 
 desc 'Scala binding for Amazon SimpleDB'
-define "simplistic_#{Buildr::Scala.version}" do
+define "simplistic_2.10" do
   project.version = VERSION_NUMBER
   project.group = "simplistic"
 
